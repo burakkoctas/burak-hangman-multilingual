@@ -5,40 +5,52 @@ class ViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
     
-    // Flag butonları için outlet koleksiyonu
-    @IBOutlet var flagButtons: [UIButton]!
+    // Bayrak imageView'ları için outlet koleksiyonu
+    @IBOutlet var flagImageViews: [UIImageView]!
     
     // Oyun modeli
     private let gameModel = GameModel()
     
+    // Seçili olan dil (varsayılan olarak İngilizce)
+    private var selectedLanguage: GameLanguage = .english
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        for button in flagButtons {
-            let imageName = "flag\(button.tag)"
-            let image = UIImage(named: imageName)
-
-            var config = UIButton.Configuration.plain()
-            config.image = image
-            config.imagePadding = 0 // Görsel ve metin arası boşluk (eğer metin varsa)
-            config.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-
-            // Görselin boyutunu küçültmek için preferredSymbolConfiguration kullan (örnek 40x30)
-            config.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(pointSize: 30)
-
-            button.configuration = config
-        }
-
+        
+        setupFlagImageViews()
         
         // Başlangıç dili İngilizce olarak ayarla
         updateSelectedLanguage(.english)
     }
     
-    // Bayrak butonuna tıklandığında
-    @IBAction func flagButtonTapped(_ sender: UIButton) {
-        // Hangi dil seçildi?
-        var selectedLanguage: GameLanguage = .english
+    // ImageView'ların ayarlanması
+    private func setupFlagImageViews() {
+        for (index, imageView) in flagImageViews.enumerated() {
+            // Her bir imageView'a tag ata (eski button.tag değerlerine göre)
+            imageView.tag = index + 1
+            
+            // Bayrak görselini ekle
+            let imageName = "flag\(imageView.tag)"
+            imageView.image = UIImage(named: imageName)
+            
+            // Bayrakların dokunulabilir olması için
+            imageView.isUserInteractionEnabled = true
+            
+            // Dokunma tanıyıcısı ekle
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(flagTapped(_:)))
+            imageView.addGestureRecognizer(tapGesture)
+            
+            // Düzgün bir boyut ayarla
+            imageView.contentMode = .scaleAspectFit
+        }
+    }
+    
+    // Bayrak imageView'ına tıklandığında (UITapGestureRecognizer için selector)
+    @objc private func flagTapped(_ gesture: UITapGestureRecognizer) {
+        guard let tappedImageView = gesture.view as? UIImageView else { return }
         
-        switch sender.tag {
+        // Hangi dil seçildi?
+        switch tappedImageView.tag {
         case 1:
             selectedLanguage = .english
         case 2:
@@ -63,14 +75,15 @@ class ViewController: UIViewController {
         // Dili lokalizasyon ve oyun modelinde ayarla
         LocalizationHelper.shared.setLanguage(language)
         gameModel.setLanguage(language)
+        selectedLanguage = language
         
         // UI'ı güncelle
         titleLabel.text = LocalizationHelper.shared.getTranslation(for: "title")
         playButton.setTitle(LocalizationHelper.shared.getTranslation(for: "play"), for: .normal)
         
-        // Seçilen bayrak için görsel vurgusu (opsiyonel)
-        for button in flagButtons {
-            button.alpha = (button.tag == getFlagTag(for: language)) ? 1.0 : 0.5
+        // Seçilen bayrak için görsel vurgusu
+        for imageView in flagImageViews {
+            imageView.alpha = (imageView.tag == getFlagTag(for: language)) ? 1.0 : 0.5
         }
     }
     

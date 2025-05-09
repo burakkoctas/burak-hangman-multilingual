@@ -7,7 +7,7 @@ class LocalizationHelper {
     // Tüm çeviriler burada tutulacak
     private var translations: [GameLanguage: [String: String]] = [
         .english: [
-            "title": "HANGMAN",
+            "title": "ENGLISH",
             "play": "PLAY",
             "back": "Back",
             "reset": "Reset Game",
@@ -22,10 +22,12 @@ class LocalizationHelper {
             "lose_popup_message": "The word was: %@\nYour score: %d",
             "ok_button": "OK",
             "next_word": "Next Word",
-            "current_score": "Score: %d"
+            "current_score": "Score: %d",
+            "try_again" : "Try Again"
+            
         ],
         .spanish: [
-            "title": "EL AHORCADO",
+            "title": "ESPAÑOL",
             "play": "JUGAR",
             "back": "Volver",
             "reset": "Reiniciar",
@@ -40,10 +42,11 @@ class LocalizationHelper {
             "lose_popup_message": "La palabra era: %@\nTu puntuación: %d",
             "ok_button": "OK",
             "next_word": "Siguiente Palabra",
-            "current_score": "Puntuación: %d"
+            "current_score": "Puntuación: %d",
+            "try_again": "Intentar otra vez"
         ],
         .italian: [
-            "title": "IMPICCATO",
+            "title": "ITALIANO",
             "play": "GIOCA",
             "back": "Indietro",
             "reset": "Ricomincia",
@@ -58,10 +61,12 @@ class LocalizationHelper {
             "lose_popup_message": "La parola era: %@\nIl tuo punteggio: %d",
             "ok_button": "OK",
             "next_word": "Prossima Parola",
-            "current_score": "Punteggio: %d"
+            "current_score": "Punteggio: %d",
+            "try_again": "Riprova"
+            
         ],
         .german: [
-            "title": "GALGENMÄNNCHEN",
+            "title": "DEUTSCH",
             "play": "SPIELEN",
             "back": "Zurück",
             "reset": "Neustart",
@@ -76,10 +81,11 @@ class LocalizationHelper {
             "lose_popup_message": "Das Wort war: %@\nDeine Punktzahl: %d",
             "ok_button": "OK",
             "next_word": "Nächstes Wort",
-            "current_score": "Punktzahl: %d"
+            "current_score": "Punktzahl: %d",
+            "try_again":"Versuchen Sie es erneut"
         ],
         .french: [
-            "title": "LE PENDU",
+            "title": "FRANÇAIS",
             "play": "JOUER",
             "back": "Retour",
             "reset": "Recommencer",
@@ -94,10 +100,12 @@ class LocalizationHelper {
             "lose_popup_message": "Le mot était: %@\nVotre score: %d",
             "ok_button": "OK",
             "next_word": "Mot Suivant",
-            "current_score": "Score: %d"
+            "current_score": "Score: %d",
+            "try_again": "Essayer à nouveau"
+            
         ],
         .portugueseBR: [
-            "title": "JOGO DA FORCA",
+            "title": "PORTUGUÊS",
             "play": "JOGAR",
             "back": "Voltar",
             "reset": "Reiniciar",
@@ -112,7 +120,8 @@ class LocalizationHelper {
             "lose_popup_message": "A palavra era: %@\nSua pontuação: %d",
             "ok_button": "OK",
             "next_word": "Próxima Palavra",
-            "current_score": "Pontuação: %d"
+            "current_score": "Pontuação: %d",
+            "try_again": "Tente novamente"
         ]
     ]
     

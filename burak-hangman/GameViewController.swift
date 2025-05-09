@@ -6,7 +6,6 @@ class GameViewController: UIViewController {
     @IBOutlet weak var hangmanImageView: UIImageView!
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var wrongGuessesLabel: UILabel!
-    @IBOutlet weak var remainingAttemptsLabel: UILabel!
     @IBOutlet weak var letterButtonsContainer: UIView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
@@ -29,7 +28,11 @@ class GameViewController: UIViewController {
     // UI elemanlarını ayarlama
     private func setupUI() {
         backButton.setTitle(LocalizationHelper.shared.getTranslation(for: "back"), for: .normal)
+        backButton.setTitleColor(.systemOrange, for: .normal)
+        backButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         resetButton.setTitle(LocalizationHelper.shared.getTranslation(for: "reset"), for: .normal)
+        resetButton.setTitleColor(.systemOrange, for: .normal)
+        resetButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         wrongGuessesLabel.text = LocalizationHelper.shared.getTranslation(for: "wrong_guesses")
         
         // Yeni skor etiketi
@@ -89,13 +92,7 @@ class GameViewController: UIViewController {
         // Yanlış tahminleri göster
         let wrongGuessesText = gameModel.wrongLetters.map { String($0) }.joined(separator: ", ")
         wrongGuessesLabel.text = "\(LocalizationHelper.shared.getTranslation(for: "wrong_guesses")) \(wrongGuessesText)"
-        
-        // Kalan deneme sayısını göster
-        remainingAttemptsLabel.text = LocalizationHelper.shared.getFormattedTranslation(
-            for: "remaining_attempts",
-            gameModel.remainingAttempts
-        )
-        
+  
         // Asılan adam görselini güncelle
         let wrongAttemptsCount = gameModel.wrongLetters.count
         hangmanImageView.image = UIImage(named: "hangman\(wrongAttemptsCount)")
@@ -173,10 +170,10 @@ class GameViewController: UIViewController {
             )
             
             let okAction = UIAlertAction(
-                title: LocalizationHelper.shared.getTranslation(for: "next_word"),
+                title: LocalizationHelper.shared.getTranslation(for: "try_again"),
                 style: .default
             ) { [weak self] _ in
-                self?.gameModel.nextWord { success in
+                self?.gameModel.resetGame {[weak self] success in
                     if success {
                         self?.updateUI()
                     } else {
