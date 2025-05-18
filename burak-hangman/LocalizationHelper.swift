@@ -23,6 +23,7 @@ class LocalizationHelper {
             "ok_button": "OK",
             "next_word": "Next Word",
             "current_score": "Score: %d",
+            "max_score": "Best: %d",
             "try_again" : "Try Again"
             
         ],
@@ -43,6 +44,7 @@ class LocalizationHelper {
             "ok_button": "OK",
             "next_word": "Siguiente Palabra",
             "current_score": "Puntuación: %d",
+            "max_score": "Mejor: %d",
             "try_again": "Intentar otra vez"
         ],
         .italian: [
@@ -62,6 +64,7 @@ class LocalizationHelper {
             "ok_button": "OK",
             "next_word": "Prossima Parola",
             "current_score": "Punteggio: %d",
+            "max_score": "Massimo: %d",
             "try_again": "Riprova"
             
         ],
@@ -82,6 +85,7 @@ class LocalizationHelper {
             "ok_button": "OK",
             "next_word": "Nächstes Wort",
             "current_score": "Punktzahl: %d",
+            "max_score": "Rekord: %d",
             "try_again":"Versuchen Sie es erneut"
         ],
         .french: [
@@ -101,6 +105,7 @@ class LocalizationHelper {
             "ok_button": "OK",
             "next_word": "Mot Suivant",
             "current_score": "Score: %d",
+            "max_score": "Record: %d",
             "try_again": "Essayer à nouveau"
             
         ],
@@ -121,6 +126,7 @@ class LocalizationHelper {
             "ok_button": "OK",
             "next_word": "Próxima Palavra",
             "current_score": "Pontuação: %d",
+            "max_score": "Recorde: %d",
             "try_again": "Tente novamente"
         ]
     ]

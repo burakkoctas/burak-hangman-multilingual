@@ -10,6 +10,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var scoreLabel: UILabel! // Yeni skor etiketi
+    @IBOutlet weak var maxScoreLabel: UILabel! // Add this line with other outlets
+
     
     // Ana sayfadan aktarılacak
     var gameModel: GameModel!
@@ -44,6 +46,12 @@ class GameViewController: UIViewController {
         scoreLabel.text = LocalizationHelper.shared.getFormattedTranslation(
             for: "current_score",
             gameModel.currentScore
+        )
+        
+        // Add max score label update
+        maxScoreLabel.text = LocalizationHelper.shared.getFormattedTranslation(
+            for: "max_score",
+            gameModel.maxScore
         )
     }
     

@@ -49,14 +49,18 @@ enum GameLanguage: String {
 class GameModel {
     private let apiBaseURL = "https://random-word-api.herokuapp.com/word"
     
+    // UserDefaults key for storing max score
+    private let maxScoreKey = "HangmanMaxScore"
+    
     private(set) var currentWord: String = ""
     private(set) var guessedLetters: Set<Character> = []
     private(set) var wrongLetters: Set<Character> = []
     private(set) var currentLanguage: GameLanguage = .english
     private(set) var gameState: GameState = .notStarted
     
-    // Skor sistemi için yeni değişkenler
+    // Score variables
     private(set) var currentScore: Int = 0
+    private(set) var maxScore: Int = 0
     
     var maxWrongAttempts = 6
     
@@ -65,6 +69,11 @@ class GameModel {
         case inProgress
         case won
         case lost
+    }
+    
+    // Initialize with loading max score from UserDefaults
+    init() {
+        loadMaxScore()
     }
     
     // Mevcut durumda kelimenin gösterilme şekli (doğru tahmin edilmeyen harfler için '_')
@@ -87,6 +96,22 @@ class GameModel {
     // Kaybetme durumu kontrolü
     var isGameLost: Bool {
         return wrongLetters.count >= maxWrongAttempts
+    }
+    
+    // Max score operations
+    private func loadMaxScore() {
+        maxScore = UserDefaults.standard.integer(forKey: maxScoreKey)
+    }
+    
+    private func saveMaxScore() {
+        UserDefaults.standard.set(maxScore, forKey: maxScoreKey)
+    }
+    
+    private func updateMaxScore() {
+        if currentScore > maxScore {
+            maxScore = currentScore
+            saveMaxScore()
+        }
     }
     
     // Dil değiştirme
@@ -178,6 +203,8 @@ class GameModel {
             gameState = .won
             // Kazandığında kelime uzunluğu kadar puan ekle
             currentScore += currentWord.count
+            // Update max score if current score is higher
+            updateMaxScore()
         } else if isGameLost {
             gameState = .lost
         }
@@ -192,5 +219,11 @@ class GameModel {
     func resetGame(completion: @escaping (Bool) -> Void) {
         currentScore = 0
         fetchNewWord(completion: completion)
+    }
+    
+    // Reset max score (for testing purposes)
+    func resetMaxScore() {
+        maxScore = 0
+        saveMaxScore()
     }
 }

@@ -4,7 +4,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
-    
+    @IBOutlet weak var maxScoreLabel: UILabel!
     // Bayrak imageView'ları için outlet koleksiyonu
     @IBOutlet var flagImageViews: [UIImageView]!
     
@@ -22,6 +22,31 @@ class ViewController: UIViewController {
         // Başlangıç dili İngilizce olarak ayarla
         updateSelectedLanguage(.english)
     }
+    
+    // Add viewWillAppear to update the UI when returning from GameViewController
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Update the score labels with the latest values
+        updateScoreLabels()
+    }
+    
+    private func updateScoreLabels() {
+        // Current score is 0 at the beginning
+        let currentScoreText = LocalizationHelper.shared.getFormattedTranslation(
+            for: "current_score",
+            gameModel.currentScore
+        )
+        
+        // Max score from UserDefaults
+        let maxScoreText = LocalizationHelper.shared.getFormattedTranslation(
+            for: "max_score",
+            gameModel.maxScore
+        )
+        
+        maxScoreLabel.text = maxScoreText
+    }
+
     
     // ImageView'ların ayarlanması
     private func setupFlagImageViews() {
@@ -80,6 +105,9 @@ class ViewController: UIViewController {
         // UI'ı güncelle
         titleLabel.text = LocalizationHelper.shared.getTranslation(for: "title")
         playButton.setTitle(LocalizationHelper.shared.getTranslation(for: "play"), for: .normal)
+        
+        // Update the score labels with the new language
+        updateScoreLabels()
         
         // Seçilen bayrak için görsel vurgusu
         for imageView in flagImageViews {

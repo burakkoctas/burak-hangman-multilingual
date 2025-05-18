@@ -10,13 +10,13 @@
         <!--Navigation Controller-->
         <scene sceneID="NdX-Dp-Dkf">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EB2-pb-J8A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="qSR-gj-xSm" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GBy-YV-DcG">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EB2-pb-J8A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1537" y="-49"/>
         </scene>
@@ -29,42 +29,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HANGMAN GAME" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgv-Tv-w2q">
-                                <rect key="frame" x="9" y="537" width="375" height="57"/>
+                                <rect key="frame" x="9" y="572" width="375" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="25"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flag2" translatesAutoresizingMaskIntoConstraints="NO" id="PWd-CF-ulj">
-                                <rect key="frame" x="139" y="334" width="115" height="70"/>
+                                <rect key="frame" x="139" y="369" width="115" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flag1" translatesAutoresizingMaskIntoConstraints="NO" id="ZSd-Ze-eEf">
-                                <rect key="frame" x="16" y="334" width="115" height="70"/>
+                                <rect key="frame" x="16" y="369" width="115" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flag3" translatesAutoresizingMaskIntoConstraints="NO" id="KLW-xE-jFa">
-                                <rect key="frame" x="262" y="334" width="115" height="70"/>
+                                <rect key="frame" x="262" y="369" width="115" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flag4" translatesAutoresizingMaskIntoConstraints="NO" id="ure-U9-WjK">
-                                <rect key="frame" x="16" y="412" width="115" height="70"/>
+                                <rect key="frame" x="16" y="447" width="115" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flag5" translatesAutoresizingMaskIntoConstraints="NO" id="cw8-4c-us6">
-                                <rect key="frame" x="139" y="412" width="115" height="70"/>
+                                <rect key="frame" x="139" y="447" width="115" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flag6" translatesAutoresizingMaskIntoConstraints="NO" id="SJO-2m-VXI">
-                                <rect key="frame" x="262" y="412" width="115" height="70"/>
+                                <rect key="frame" x="262" y="447" width="115" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="17467876352189040642624688029143-5" translatesAutoresizingMaskIntoConstraints="NO" id="V7j-bd-dow">
-                                <rect key="frame" x="16" y="69" width="361" height="234"/>
+                                <rect key="frame" x="16" y="104" width="361" height="234"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqi-YE-fkP">
-                                <rect key="frame" x="151" y="645" width="90" height="35"/>
+                                <rect key="frame" x="151" y="680" width="90" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.96005839110000002" green="0.7495666742" blue="0.3174935579" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
@@ -73,11 +73,19 @@
                                     <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d2r-YE-giO"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YnT-Vx-8vb">
+                                <rect key="frame" x="133" y="59" width="126" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.99994927639999998" green="0.99218946699999999" blue="0.97254568340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <connections>
+                        <outlet property="maxScoreLabel" destination="YnT-Vx-8vb" id="tCa-8O-fRl"/>
                         <outlet property="playButton" destination="mqi-YE-fkP" id="IOG-gf-i0v"/>
                         <outlet property="titleLabel" destination="wgv-Tv-w2q" id="2xD-gy-Eqa"/>
                         <outletCollection property="flagImageViews" destination="ZSd-Ze-eEf" collectionClass="NSMutableArray" id="mAJ-1f-rNI"/>
@@ -153,6 +161,13 @@
                                 <rect key="frame" x="16" y="127" width="361" height="280"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4P-3q-OaJ">
+                                <rect key="frame" x="144" y="63" width="106" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NIy-L8-VoD"/>
                         <color key="backgroundColor" red="0.99994927639999998" green="0.99218946699999999" blue="0.97254568340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -162,6 +177,7 @@
                         <outlet property="backButton" destination="nIa-wK-ODf" id="Kqj-XT-t0t"/>
                         <outlet property="hangmanImageView" destination="Vhe-2p-ghC" id="S0Z-ZD-RMm"/>
                         <outlet property="letterButtonsContainer" destination="vMG-zo-Zd0" id="dga-RL-9Uv"/>
+                        <outlet property="maxScoreLabel" destination="F4P-3q-OaJ" id="YCV-Cb-iMf"/>
                         <outlet property="resetButton" destination="wHq-k2-Puv" id="kyP-vD-HOI"/>
                         <outlet property="scoreLabel" destination="TKE-hf-DrZ" id="Tm5-Pk-6Tr"/>
                         <outlet property="wordLabel" destination="4ie-To-ANg" id="a0n-V3-cVP"/>
